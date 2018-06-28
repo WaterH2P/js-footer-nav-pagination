@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo</title>
+        <link rel="stylesheet" href="css/bulma.min.css"/>
+    </head>
+    <body style="text-align: center;">
+        <div style="width: 100%; height: 30px; visibility: hidden;"></div>
+        <div style="min-width:600px; max-width: 800px; display: inline-block;">
+            <nav id="footer-nav-pagination"></nav>
+        </div>
+
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="footer-nav-pagination.js"></script>
+        <script>
+            function sayHello(index){
+                alert('hello');
+                footer_nav_pagination.update({
+                click_action : sayHello,
+                page : {
+                    minIndexOfPage : 1,
+                    maxIndexOfPage : 2,
+                    indexOfCurrentPage : index
+                }
+            });
+            }
+            var footer_nav_pagination = new footer_nav_pagination();
+            footer_nav_pagination.update({
+                click_action : sayHello,
+                page : {
+                    minIndexOfPage : 1,
+                    maxIndexOfPage : 2,
+                    indexOfCurrentPage : 1
+                }
+            });
+        </script>
+    </body>
+</html>
