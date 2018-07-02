@@ -14,25 +14,24 @@
         <script src="jquery-3.3.1.min.js"></script>
         <script src="footer-nav-pagination.js"></script>
         <script>
+            var page = {
+                minIndexOfPage : 1,
+                maxIndexOfPage : 2,
+                indexOfCurrentPage : 1
+            };
+            var update = {
+                automatic : true,
+                hide : true
+            };
             function sayHello(index){
                 alert('hello');
-                footer_nav_pagination.update({
-                click_action : sayHello,
-                page : {
-                    minIndexOfPage : 1,
-                    maxIndexOfPage : 2,
-                    indexOfCurrentPage : index
-                }
-            });
+                footer_nav_pagination.show();
             }
             var footer_nav_pagination = new footer_nav_pagination();
             footer_nav_pagination.update({
                 click_action : sayHello,
-                page : {
-                    minIndexOfPage : 1,
-                    maxIndexOfPage : 2,
-                    indexOfCurrentPage : 1
-                }
+                page : page,
+                update : update
             });
         </script>
     </body>
